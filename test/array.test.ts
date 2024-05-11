@@ -28,7 +28,7 @@
 
 import { it, expect } from 'vitest'
 import { parseArray } from '../src/struct.js'
-import TomlError from '../src/error.js'
+import { TomlError } from '../src/error.js'
 
 it('parses arrays', () => {
 	expect(parseArray('[ 1, 2, 3 ]', 0)).toStrictEqual([ [ 1, 2, 3 ], 11 ])

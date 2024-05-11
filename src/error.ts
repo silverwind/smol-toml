@@ -60,7 +60,7 @@ function makeCodeBlock (string: string, line: number, column: number) {
 	return codeblock
 }
 
-export default class TomlError extends Error {
+export class TomlError extends Error {
 	line: number
 	column: number
 	codeblock: string
@@ -75,4 +75,3 @@ export default class TomlError extends Error {
 		this.codeblock = codeblock
 	}
 }
-

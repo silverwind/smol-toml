@@ -1,6 +1,6 @@
 {
 	"name": "smol-toml",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"keywords": [
 		"toml",
 		"parser",
@@ -10,10 +10,9 @@
 	"repository": "git@github.com:squirrelchat/smol-toml.git",
 	"author": "Cynthia <cyyynthia@borkenware.com>",
 	"license": "BSD-3-Clause",
-	"type": "module",
 	"engines": {
 		"node": ">= 18",
-		"pnpm": ">= 8"
+		"pnpm": ">= 9"
 	},
 	"scripts": {
 		"build": "tsc",
@@ -24,13 +23,13 @@
 	"devDependencies": {
 		"@iarna/toml": "3.0.0",
 		"@ltd/j-toml": "^1.38.0",
-		"@tsconfig/node-lts": "^20.1.1",
-		"@tsconfig/strictest": "^2.0.2",
-		"@types/node": "^20.11.5",
-		"@vitest/ui": "^1.2.1",
+		"@tsconfig/node-lts": "^20.1.3",
+		"@tsconfig/strictest": "^2.0.5",
+		"@types/node": "^20.12.11",
+		"@vitest/ui": "^1.6.0",
 		"fast-toml": "^0.5.4",
-		"typescript": "^5.3.3",
-		"vitest": "^1.2.1"
+		"typescript": "^5.4.5",
+		"vitest": "^1.6.0"
 	},
 	"exports": {
 		".": {

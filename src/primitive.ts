@@ -27,8 +27,8 @@
  */
 
 import { skipVoid } from './util.js'
-import TomlDate from './date.js'
-import TomlError from './error.js'
+import { TomlDate } from './date.js'
+import { TomlError } from './error.js'
 
 let INT_REGEX = /^((0x[0-9a-fA-F](_?[0-9a-fA-F])*)|(([+-]|0[ob])?\d(_?\d)*))$/
 let FLOAT_REGEX = /^[+-]?\d(_?\d)*(\.\d(_?\d)*)?([eE][+-]?\d(_?\d)*)?$/

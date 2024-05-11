@@ -28,7 +28,7 @@
 
 import { it, expect } from 'vitest'
 import { parseKey } from '../src/struct.js'
-import TomlError from '../src/error.js'
+import { TomlError } from '../src/error.js'
 
 it('parses simple keys', () => {
 	expect(parseKey('key =', 0)).toStrictEqual([ [ 'key' ], 5 ])

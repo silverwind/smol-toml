@@ -28,8 +28,8 @@
 
 import { it, expect } from 'vitest'
 import { parseValue } from '../src/primitive.js'
-import TomlError from '../src/error.js'
-import TomlDate from '../src/date.js'
+import { TomlError } from '../src/error.js'
+import { TomlDate } from '../src/date.js'
 
 it('parses integers', () => {
 	expect(parseValue('+99', '', 0)).toBe(99)
