@@ -37,6 +37,13 @@ const toml = stringify(parsed)
 console.log(toml)
 ```
 
+Alternatively, if you prefer something similar to the JSON global, you can import the library as follows
+```js
+import TOML from 'smol-toml'
+
+TOML.stringify({ ... })
+```
+
 A few notes on the `stringify` function:
 - `undefined` and `null` values on objects are ignored (does not produce a key/value).
 - `undefined` and `null` values in arrays are **rejected**.
@@ -91,10 +98,11 @@ const localTime = TomlDate.wrapAsLocalTime(jsDate)
 ## Performance
 A note on these performance numbers: in some highly synthetic tests, other parsers such as `fast-toml` greatly
 outperform other parsers, mostly due to their lack of compliance with the spec. For example, to parse a string,
-`fast-toml` skips the entire string while `smol-toml` does validate the string, costing a fair chair of performance.
+`fast-toml` skips the entire string while `smol-toml` does validate the string, costing a fair share of performance.
 
-The ~5MB test file used for benchmark here is filled with random data which attempts to be close-ish to reality. The
-idea is to have a file relatively close to a real-world application.
+The ~5MB test file used for benchmark here is filled with random data which attempts to be close-ish to reality in
+terms of structure. The idea is to have a file relatively close to a real-world application, with moderately sized
+strings etc.
 
 The large TOML generator can be found [here](https://gist.github.com/cyyynthia/e77c744cb6494dabe37d0182506526b9)
 
@@ -171,7 +179,7 @@ I initially reported this to the library author, but the author decided to
 - b) [delete the issue](https://github.com/huan231/toml-nodejs/issues/12) when pointed out links to the NodeJS
 documentation about the flag removal and standard resolution algorithm.
 
-For the reference anyways, `toml-nodejs` (with proper imports) is ~8x slower on both parse benchmark with:
+For the reference anyway, `toml-nodejs` (with proper imports) is ~8x slower on both parse benchmark with:
 - spec example: 7,543.47 op/s
 - 5mb mixed: 0.7006 op/s
 </details>
