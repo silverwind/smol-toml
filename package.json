@@ -7,7 +7,10 @@
 		"serializer"
 	],
 	"description": "A small, fast, and correct TOML parser/serializer",
-	"repository": "git@github.com:squirrelchat/smol-toml.git",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/squirrelchat/smol-toml.git"
+	},
 	"author": "Cynthia <cyyynthia@borkenware.com>",
 	"license": "BSD-3-Clause",
 	"engines": {
