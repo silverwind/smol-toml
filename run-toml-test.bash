@@ -15,6 +15,6 @@ skip=(
 )
 
 e=0
-toml-test -int-as-float          ${skip[@]} ./toml-test-parse.js  || e=1
-toml-test -int-as-float -encoder ${skip[@]} ./toml-test-encode.js || e=1
+toml-test -int-as-float          ${skip[@]} ./toml-test-parse.mjs  || e=1
+toml-test -int-as-float -encoder ${skip[@]} ./toml-test-encode.mjs || e=1
 exit $e

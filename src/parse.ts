@@ -29,7 +29,7 @@
 import { parseKey } from './struct.js'
 import { extractValue } from './extract.js'
 import { type TomlPrimitive, skipVoid } from './util.js'
-import TomlError from './error.js'
+import { TomlError } from './error.js'
 
 const enum Type { DOTTED, EXPLICIT, ARRAY, ARRAY_DOTTED }
 

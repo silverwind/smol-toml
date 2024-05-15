@@ -26,8 +26,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export { default as TomlError } from './error.js'
-export { default as TomlDate } from './date.js'
+export { TomlError } from './error.js'
+export { TomlDate } from './date.js'
 
 export { parse } from './parse.js'
 export { stringify } from './stringify.js'

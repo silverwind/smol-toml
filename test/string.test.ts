@@ -28,7 +28,7 @@
 
 import { it, expect } from 'vitest'
 import { parseString } from '../src/primitive.js'
-import TomlError from '../src/error.js'
+import { TomlError } from '../src/error.js'
 
 it('parses a string', () => {
 	expect(parseString('"this is a string"')).toBe('this is a string')

@@ -28,7 +28,7 @@
 
 import { it, expect } from 'vitest'
 import { stringify } from '../src/stringify.js'
-import TomlDate from '../src/date.js'
+import { TomlDate } from '../src/date.js'
 
 it('stringifies a basic object', () => {
 	const expected = `

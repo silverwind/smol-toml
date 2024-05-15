@@ -28,7 +28,7 @@
 
 import { it, expect } from 'vitest'
 import { parseInlineTable } from '../src/struct.js'
-import TomlError from '../src/error.js'
+import { TomlError } from '../src/error.js'
 
 it('parses inline tables', () => {
 	expect(parseInlineTable('{ first = "Tom", last = "Preston-Werner" }', 0))
