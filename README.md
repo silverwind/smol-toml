@@ -2,6 +2,7 @@
 [![TOML 1.0.0](https://img.shields.io/badge/TOML-1.0.0-9c4221?style=flat-square)](https://toml.io/en/v1.0.0)
 [![License](https://img.shields.io/github/license/squirrelchat/smol-toml.svg?style=flat-square)](https://github.com/squirrelchat/smol-toml/blob/mistress/LICENSE)
 [![npm](https://img.shields.io/npm/v/smol-toml?style=flat-square)](https://npm.im/smol-toml)
+[![Build](https://img.shields.io/github/actions/workflow/status/squirrelchat/smol-toml/build.yml?style=flat-square&logo=github)](https://github.com/squirrelchat/smol-toml/actions/workflows/build.yml)
 
 A small, fast, and correct TOML parser and serializer. smol-toml is fully(ish) spec-compliant with TOML v1.0.0.
 
@@ -16,9 +17,15 @@ smol-toml passes most of the tests from the [`toml-test` suite](https://github.c
 it doesn't pass certain tests, namely:
 - Invalid UTF-8 strings are not rejected
 - Certain invalid UTF-8 codepoints are not rejected
+- Certain invalid dates are not rejected
+  - For instance, `2023-02-30` would be accepted and parsed as `2023-03-02`. While additional checks could be performed
+	to reject these, they've not been added for performance reasons.
 - smol-toml doesn't preserve type information between integers and floats (in JS, everything is a float)
-- smol-toml doesn't support the whole 64-bit range for integers (but does throw an appropriate error)
-  - As all numbers are floats in JS, the safe range is `2**53 - 1` <=> `-(2**53 - 1)`.
+
+You can see a list of all tests smol-toml fails (and the reason why it fails these) in the list of skipped tests in
+`run-toml-test.bash`. Note that some failures are *not* specification violations per-se. For instance, the TOML spec
+does not require 64-bit integer range support or sub-millisecond time precision, but are included in the `toml-test`
+suite. See https://github.com/toml-lang/toml-test/issues/154 and https://github.com/toml-lang/toml-test/issues/155
 
 ## Installation
 ```

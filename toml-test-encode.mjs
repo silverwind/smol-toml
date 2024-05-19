@@ -42,7 +42,9 @@ function untagObject (obj) {
 			case 'bool':
 				return obj.value === 'true'
 			case 'integer':
-				return BigInt(obj.value)
+				// TODO: add an option to always serialize numbers as floats
+				// return BigInt(obj.value)
+				return Number(obj.value)
 			case 'float':
 				if (obj.value === 'nan') return NaN
 				if (obj.value === '+nan') return NaN
@@ -50,10 +52,6 @@ function untagObject (obj) {
 				if (obj.value === 'inf') return Infinity
 				if (obj.value === '+inf') return Infinity
 				if (obj.value === '-inf') return -Infinity
-
-				if (obj.value === 'Inf') return Infinity
-				if (obj.value === '+Inf') return Infinity
-				if (obj.value === '-Inf') return -Infinity
 				return Number(obj.value)
 			case 'datetime':
 			case 'datetime-local':
