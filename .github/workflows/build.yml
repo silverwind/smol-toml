@@ -43,6 +43,7 @@ jobs:
       - run: pnpm run test
 
   toml-test:
+    needs: [build]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
