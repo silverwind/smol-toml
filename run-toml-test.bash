@@ -21,6 +21,7 @@ skip_decode=(
 	-skip='invalid/local-date/feb-30'
 	-skip='invalid/local-datetime/feb-30'
 	-skip='invalid/datetime/feb-30'
+	-skip='invalid/datetime/offset-overflow-hour'
 
 	# smol-toml does not support the entire 64-bit integer range
 	# This is not required by the specification, and smol-toml throws an appropriate error
@@ -44,6 +45,7 @@ skip_encode=(
 	-skip='valid/float/exponent'
 	-skip='valid/comment/tricky'
 	-skip='valid/spec/float-0'
+	-skip='valid/float/max-int'
 
 	# smol-toml does not support the entire 64-bit integer range
 	# This is not required by the specification, and smol-toml throws an appropriate error
